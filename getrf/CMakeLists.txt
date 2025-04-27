@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
+set(CMAKE_CUDA_ARCHITECTURES 87 89 90)
 project(getrf VERSION 0.1.0 LANGUAGES C CXX CUDA)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -6,7 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 
-set(CMAKE_CUDA_ARCHITECTURES 87 89 90)
 
 # 判断是否有 CUDA 环境
 find_package(CUDAToolkit)
@@ -18,7 +18,7 @@ else()
 endif()
 
 # 设置 MAGMA 路径
-set(MAGMA_ROOT "/home/ruinique/usr/local/magma")
+set(MAGMA_ROOT "/home/ruinique/magma/magma_install")
 set(MAGMA_INCLUDE_DIRS "${MAGMA_ROOT}/include")
 set(MAGMA_LIBRARY_DIRS "${MAGMA_ROOT}/lib")
 

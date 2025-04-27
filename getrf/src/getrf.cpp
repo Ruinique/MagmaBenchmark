@@ -5,10 +5,6 @@
 #include <cstddef>
 #include <cstdio>
 
-#include "magma_auxiliary.h"
-#include "magma_copy.h"
-#include "magma_types.h"
-
 #define MAGIC_SEED 261825L
 
 template <typename T>
@@ -53,7 +49,6 @@ double test_magma_getrf(magma_int_t m, magma_int_t n, magma_queue_t queue) {
         magma_setmatrix(m, n, sizeof(T), test_cpy_h, m, test, m, queue);
 
         magma_queue_sync(queue);
-
         auto start = magma_sync_wtime(queue);
 
         if constexpr (std::is_same_v<T, float>)

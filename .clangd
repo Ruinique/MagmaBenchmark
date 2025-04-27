@@ -10,3 +10,6 @@ CompileFlags:
         - "--generate-code=arch=compute_52,code=[compute_52,sm_52]"
         - "-forward-unknown-to-host-compiler"
     Compiler: /usr/local/cuda-12.8/bin/nvcc
+
+
+    
